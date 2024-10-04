@@ -1,11 +1,12 @@
 import React from "react";
 const Task = (props) => {
     return (
-        <div className="card">
+        <div className="card" style={{backgroundColor: props.done ? 'lightgrey' : '#5bb4c4'}}>
             <p className="title">{props.title}</p>
             <p>Due:{props.deadline}</p>
-            <p>{props.children}</p>
-            <p className="des">{props.deccription}</p>
+            <p className="des">{props.description}</p>
+            <p>{props.afk}</p>
+            <button onClick={props.markDone} className="doneButton">Done</button>
         </div>
     )
 }
