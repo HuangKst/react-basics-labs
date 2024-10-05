@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Task from './components/Task';
 import React,{useState} from 'react';
+import AddTaskForm from './components/Form';
 
 function App() {
   const [ taskState, setTaskState ] = useState({
@@ -22,6 +23,7 @@ function App() {
 
   const deleteHandler = (taskIndex)=>{
     const tasks=[...taskState.tasks];
+    //delete the element from the taskIndex and delete 1 element 
     tasks.splice(taskIndex,1);
     setTaskState({tasks});
   }
@@ -42,6 +44,7 @@ function App() {
           deleteTask={() => deleteHandler(index)}
           />
       ))}
+      <AddTaskForm/>
     </div>
   );
   
